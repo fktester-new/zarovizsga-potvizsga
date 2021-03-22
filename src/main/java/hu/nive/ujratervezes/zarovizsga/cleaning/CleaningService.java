@@ -38,4 +38,14 @@ public class CleaningService {
         cleanables.removeAll(offices);
         return price;
     }
+
+    public List<Cleanable> findByAddressPart(String address){
+        List<Cleanable> result = new ArrayList<>();
+        for (Cleanable c : cleanables) {
+            if (c.getAddress().contains(address)){
+                result.add(c);
+            }
+        }
+        return result;
+    }
 }

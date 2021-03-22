@@ -36,13 +36,13 @@ class CleaningServiceTest {
         assertEquals(2, service.getCleanables().size());
     }
 
-    /*@Test
+    @Test
     void findByAddressPart() {
         assertEquals(1, service.findByAddressPart("Bp. Fo ut 1.").size());
         assertEquals(4, service.findByAddressPart("Bp").size());
     }
 
-    @Test
+    /*@Test
     void getAddresses() {
         assertEquals("Bp. Fo ut 1., Bp. Fo ut 2., Bp. Fo ut 3., Bp. Fo ut 4.", service.getAddresses());
     }*/
