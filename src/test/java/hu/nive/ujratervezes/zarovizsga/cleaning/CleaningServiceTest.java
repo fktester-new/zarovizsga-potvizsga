@@ -42,8 +42,8 @@ class CleaningServiceTest {
         assertEquals(4, service.findByAddressPart("Bp").size());
     }
 
-    /*@Test
+    @Test
     void getAddresses() {
         assertEquals("Bp. Fo ut 1., Bp. Fo ut 2., Bp. Fo ut 3., Bp. Fo ut 4.", service.getAddresses());
-    }*/
+    }
 }

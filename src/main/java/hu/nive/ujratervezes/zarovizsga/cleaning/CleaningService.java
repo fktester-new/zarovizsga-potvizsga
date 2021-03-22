@@ -39,13 +39,23 @@ public class CleaningService {
         return price;
     }
 
-    public List<Cleanable> findByAddressPart(String address){
+    public List<Cleanable> findByAddressPart(String address) {
         List<Cleanable> result = new ArrayList<>();
         for (Cleanable c : cleanables) {
-            if (c.getAddress().contains(address)){
+            if (c.getAddress().contains(address)) {
                 result.add(c);
             }
         }
         return result;
+    }
+
+    public String getAddresses() {
+        StringBuilder temp = new StringBuilder();
+        for (Cleanable c : cleanables) {
+            temp.append(c.getAddress()).append(", ");
+        }
+        String s = temp.toString();
+        s = s.trim();
+        return s.substring(0, s.length() - 1);
     }
 }
