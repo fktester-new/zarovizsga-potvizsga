@@ -14,4 +14,15 @@ public class CleaningService {
     public void add(Cleanable cleanable){
         cleanables.add(cleanable);
     }
+
+    public int cleanAll(){
+        int price = 0;
+        List<Cleanable> toDel = new ArrayList<>();
+        for (Cleanable c : cleanables) {
+            price += c.clean();
+            toDel.add(c);
+        }
+       cleanables.removeAll(toDel);
+        return price;
+    }
 }

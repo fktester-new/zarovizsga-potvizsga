@@ -22,14 +22,14 @@ class CleaningServiceTest {
         assertEquals(4, service.getCleanables().size());
     }
 
-    /*@Test
+    @Test
     void cleanAll() {
         int result = service.cleanAll();
         assertEquals(244_400, result);
         assertEquals(0, service.getCleanables().size());
     }
 
-    @Test
+    /*@Test
     void cleanOnlyOffices() {
         int result = service.cleanOnlyOffices();
         assertEquals(210_000, result);
