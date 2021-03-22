@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class WordsTest {
 
-    /*@Test
+    @Test
     void hasMoreDigits() {
         Words words = new Words();
         assertTrue(words.hasMoreDigits("1"));
@@ -15,5 +15,5 @@ class WordsTest {
         assertTrue(words.hasMoreDigits("1aa111"));
         assertFalse(words.hasMoreDigits(""));
         assertFalse(words.hasMoreDigits("1a"));
-    }*/
+    }
 }
