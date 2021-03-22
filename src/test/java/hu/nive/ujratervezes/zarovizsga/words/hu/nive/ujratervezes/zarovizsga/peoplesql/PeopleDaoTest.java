@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class PeopleDaoTest {
 
-    /*private PeopleDao peopleDao;
+    private PeopleDao peopleDao;
 
     @BeforeEach
     void init() throws SQLException {
@@ -34,5 +34,5 @@ class PeopleDaoTest {
     void findIpByName() {
         assertEquals("134.135.61.66", peopleDao.findIpByName("Brina", "Snibson"));
         assertEquals("97.203.249.128", peopleDao.findIpByName("Torrence", "Porteous"));
-    } */
+    }
 }
