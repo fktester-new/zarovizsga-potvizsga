@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CleaningServiceTest {
 
-    /*CleaningService service = new CleaningService();
+    CleaningService service = new CleaningService();
 
     @BeforeEach
     void init() {
@@ -22,7 +22,7 @@ class CleaningServiceTest {
         assertEquals(4, service.getCleanables().size());
     }
 
-    @Test
+    /*@Test
     void cleanAll() {
         int result = service.cleanAll();
         assertEquals(244_400, result);
