@@ -29,14 +29,14 @@ class CleaningServiceTest {
         assertEquals(0, service.getCleanables().size());
     }
 
-    /*@Test
+    @Test
     void cleanOnlyOffices() {
         int result = service.cleanOnlyOffices();
         assertEquals(210_000, result);
         assertEquals(2, service.getCleanables().size());
     }
 
-    @Test
+    /*@Test
     void findByAddressPart() {
         assertEquals(1, service.findByAddressPart("Bp. Fo ut 1.").size());
         assertEquals(4, service.findByAddressPart("Bp").size());
