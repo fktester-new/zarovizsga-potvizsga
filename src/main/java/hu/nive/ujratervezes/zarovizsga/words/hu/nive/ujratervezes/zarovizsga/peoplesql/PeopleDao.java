@@ -25,7 +25,7 @@ public class PeopleDao {
             return findIp(stmt);
 
         } catch (SQLException sqle) {
-            throw new IllegalArgumentException("Error by insert", sqle);
+            throw new IllegalStateException("Cannot connect", sqle);
         }
     }
 
@@ -34,12 +34,12 @@ public class PeopleDao {
                 ResultSet rs = statement.executeQuery()
         ) {
             if (rs.next()) {
-                return  rs.getString("ip_address");
-
+                return rs.getString("ip_address");
             }
-            throw new IllegalArgumentException("No result");
+
         } catch (SQLException sqle) {
-            throw new IllegalArgumentException("Error by query", sqle);
+            throw new IllegalStateException("Cannot execute", sqle);
         }
+        throw new IllegalArgumentException("No result");
     }
 }
