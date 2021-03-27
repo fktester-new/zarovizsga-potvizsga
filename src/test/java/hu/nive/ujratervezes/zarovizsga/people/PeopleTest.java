@@ -12,4 +12,11 @@ class PeopleTest {
         int males = people.getNumberOfMales("src/test/resources/people.csv");
         assertEquals(545, males);
     }
+
+    @Test
+    void getNumberOfMalesOther() {
+        People people = new People();
+        int males = people.getNumberOfMalesOther("src/test/resources/people.csv");
+        assertEquals(545, males);
+    }
 }
