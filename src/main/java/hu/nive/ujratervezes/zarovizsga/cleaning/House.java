@@ -2,8 +2,10 @@ package hu.nive.ujratervezes.zarovizsga.cleaning;
 
 public class House implements Cleanable{
 
+    public static int CLEANING_PRICE = 80;
     private String address;
     private int area;
+    private BuildingType type = BuildingType.HOUSE;
 
     public House(String address, int area) {
         this.address = address;
@@ -19,7 +21,12 @@ public class House implements Cleanable{
     }
 
     @Override
+    public BuildingType getType() {
+        return type;
+    }
+
+    @Override
     public int clean() {
-        return 80 * area;
+        return CLEANING_PRICE * area;
     }
 }

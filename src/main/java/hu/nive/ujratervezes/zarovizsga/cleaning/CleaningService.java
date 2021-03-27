@@ -1,6 +1,7 @@
 package hu.nive.ujratervezes.zarovizsga.cleaning;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class CleaningService {
@@ -8,7 +9,7 @@ public class CleaningService {
     private List<Cleanable> cleanables = new ArrayList<>();
 
     public List<Cleanable> getCleanables() {
-        return cleanables;
+        return new ArrayList<>(cleanables);
     }
 
     public void add(Cleanable cleanable) {
@@ -17,12 +18,10 @@ public class CleaningService {
 
     public int cleanAll() {
         int price = 0;
-        List<Cleanable> toDel = new ArrayList<>();
         for (Cleanable c : cleanables) {
             price += c.clean();
-            toDel.add(c);
         }
-        cleanables.removeAll(toDel);
+        cleanables.clear();
         return price;
     }
 
@@ -39,6 +38,19 @@ public class CleaningService {
         return price;
     }
 
+    public int cleanOnlyOfficesWithIterator(){
+        int price = 0;
+        Iterator<Cleanable> iterator = cleanables.iterator();
+        while (iterator.hasNext()){
+            Cleanable cleanable = iterator.next();
+            if (cleanable.getType() == BuildingType.OFFICE){
+                price += cleanable.clean();
+                iterator.remove();
+            }
+        }
+        return price;
+    }
+
     public List<Cleanable> findByAddressPart(String address) {
         List<Cleanable> result = new ArrayList<>();
         for (Cleanable c : cleanables) {
@@ -50,6 +62,9 @@ public class CleaningService {
     }
 
     public String getAddresses() {
+        if (cleanables.size() == 0){
+            return "";
+        }
         StringBuilder temp = new StringBuilder();
         for (Cleanable c : cleanables) {
             temp.append(c.getAddress()).append(", ");

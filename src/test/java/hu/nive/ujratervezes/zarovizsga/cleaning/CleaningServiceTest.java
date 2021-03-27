@@ -37,6 +37,13 @@ class CleaningServiceTest {
     }
 
     @Test
+    void cleanOnlyOfficesWithIterator() {
+        int result = service.cleanOnlyOfficesWithIterator();
+        assertEquals(210_000, result);
+        assertEquals(2, service.getCleanables().size());
+    }
+
+    @Test
     void findByAddressPart() {
         assertEquals(1, service.findByAddressPart("Bp. Fo ut 1.").size());
         assertEquals(4, service.findByAddressPart("Bp").size());

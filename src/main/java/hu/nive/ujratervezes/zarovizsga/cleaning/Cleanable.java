@@ -4,6 +4,6 @@ public interface Cleanable {
 
     int clean();
     String getAddress();
-
+    BuildingType getType();
 
 }

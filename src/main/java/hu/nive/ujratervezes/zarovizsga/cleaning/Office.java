@@ -2,9 +2,12 @@ package hu.nive.ujratervezes.zarovizsga.cleaning;
 
 public class Office implements Cleanable{
 
+    public static int CLEANING_PRICE = 100;
+
     private String address;
     private int area;
     private int numberOfFloors;
+    private BuildingType type = BuildingType.OFFICE;
 
     public Office(String address, int area, int numberOfFloors) {
         this.address = address;
@@ -21,12 +24,17 @@ public class Office implements Cleanable{
         return area;
     }
 
+    @Override
+    public BuildingType getType() {
+        return type;
+    }
+
     public int getNumberOfFloors() {
         return numberOfFloors;
     }
 
     @Override
     public int clean() {
-        return 100 * area * numberOfFloors;
+        return CLEANING_PRICE * area * numberOfFloors;
     }
 }
